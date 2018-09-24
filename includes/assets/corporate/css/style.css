@@ -450,7 +450,7 @@ body.page-header-fixed {
 	border-bottom: 1px solid #eee;
 }
 
-.site-logo {
+.site-title {
   float: left;
   font-size: 23px;
   font-weight: 400;
@@ -460,6 +460,13 @@ body.page-header-fixed {
   padding-bottom: 22px;
 }
 
+.site-logo {
+  float: left;
+  font-size: 23px;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .header .mobi-toggler {
   float: right;
   color: #D8D8D8;

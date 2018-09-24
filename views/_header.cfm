@@ -53,7 +53,7 @@
   <div class="container">
     <cfif cb.themeSetting( 'headerLogo', '' ) is "">
       <div class="col-sm-6 col-md-6">
-        <a href="#cb.linkHome()#" class="site-logo" title="#cb.siteTagLine()#" data-toggle="tooltip"><strong>#cb.siteName()#</strong></a>
+        <a href="#cb.linkHome()#" class="site-title" title="#cb.siteTagLine()#" data-toggle="tooltip"><strong>#cb.siteName()#</strong></a>
       </div>
     <cfelse>
       <div class="col-sm-6 col-md-6">
