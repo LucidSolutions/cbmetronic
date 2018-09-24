@@ -105,7 +105,7 @@ component{
 			{ name="socialS", 		group="Social", defaultValue="", 		type="text", 	label="Skype:" },
 			{ name="socialGH", 		group="Social", defaultValue="", 		type="text", 	label="Github:" }
 			
-		];
+		]; 
 
 	/**
 	* Build the swatches options
