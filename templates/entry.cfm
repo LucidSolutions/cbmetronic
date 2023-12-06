@@ -5,7 +5,7 @@
 	<div class="post" id="post_#entry.getContentID()#">
 	<cfif entry.getFeaturedImageURL() NEQ ''>
 		<div class="col-md-4 col-sm-4">
-			<img class="img-responsive" alt="#entry.getTitle()#" src="#entry.getFeaturedImageURL()#" width="800px" height="600px">
+			<a href="#cb.linkEntry(entry)#" rel="bookmark" title="#entry.getTitle()#"><img class="img-responsive" alt="#entry.getTitle()#" src="#entry.getFeaturedImageURL()#" width="800px" height="600px"></a>
 		</div>
 	</cfif>
     	

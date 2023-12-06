@@ -37,16 +37,29 @@
 		var cbSettings 		= event.getValue( name="cbSettings", private=true );
 		
 		// Determine Sort Order
-		switch( arguments.sortOrder ){
-			case "Most Popular" 	: { arguments.sortOrder = "hits DESC";break; }
-			case "Most Commented" 	: { arguments.sortOrder = "numberOfComments DESC";break;}
-			default : { arguments.sortOrder = "publishedDate DESC"; }
+		// Determine Sort Order
+		switch ( arguments.sortOrder ) {
+			case "Most Popular": {
+				arguments.sortOrder = "hits DESC";
+				break;
+			}
+			case "Most Commented": {
+				arguments.sortOrder = "numberOfComments DESC";
+				break;
+			}
+			default: {
+				arguments.sortOrder = "publishedDate DESC";
+			}
 		}
 
-		var entryResults 	= entryService.findPublishedEntries( max=arguments.max,
-											   					 category=arguments.category,
-											   				 	 searchTerm=arguments.searchTerm,
-											   				 	 sortOrder=arguments.sortOrder );
+		var entryResults = variables.entryService.findPublishedContent(
+			max       : arguments.max,
+			category  : arguments.category,
+			searchTerm: arguments.searchTerm,
+			sortOrder : arguments.sortOrder,
+			siteID    : getSite().getsiteID()
+		);
+
 		var rString			= "";
 
 		// iteration cap
@@ -64,24 +77,24 @@
 			for(var x=1; x lte arguments.max; x++){
 				writeOutput('<li class="row margin-bottom-10">');
 				
-				if(entryResults.entries[ x ].getFeaturedImageURL() NEQ ''){
+				if(entryResults.content[ x ].getFeaturedImageURL() NEQ ''){
 					writeOutput('<div class="col-md-3 col-sm-3">');
-					writeOutput('<img class="img-responsive" alt="" src="#entryResults.entries[ x ].getFeaturedImageURL()#">');
+					writeOutput('<img class="img-responsive" alt="" src="#entryResults.content[ x ].getFeaturedImageURL()#">');
 					writeOutput('</div>');
 					writeOutput('<div class="col-md-9 col-sm-9">');
-					writeOutput('<h3><a href="#cb.linkEntry(entryResults.entries[ x ])#" rel="bookmark" title="#entryResults.entries[ x ].getTitle()#">');
-					writeOutput(#left(entryResults.entries[ x ].getTitle(),20)#);
+					writeOutput('<h3><a href="#cb.linkEntry(entryResults.content[ x ])#" rel="bookmark" title="#entryResults.content[ x ].getTitle()#">');
+					writeOutput(#left(entryResults.content[ x ].getTitle(),20)#);
 					writeOutput('</a></h3>');
-					writeOutput(#left(entryResults.entries[ x ].renderContent(),50)#);
+					writeOutput(#left(entryResults.content[ x ].renderContent(),50)#);
 					writeoutput('...');
 					writeOutput('</div>');
 				}
 				else{
 					writeOutput('<div class="col-md-12 col-sm-12">');
-					writeOutput('<h3><a href="#cb.linkEntry(entryResults.entries[ x ])#" rel="bookmark" title="#entryResults.entries[ x ].getTitle()#">');
-					writeOutput(#left(entryResults.entries[ x ].getTitle(),40)#);
+					writeOutput('<h3><a href="#cb.linkEntry(entryResults.content[ x ])#" rel="bookmark" title="#entryResults.content[ x ].getTitle()#">');
+					writeOutput(#left(entryResults.content[ x ].getTitle(),40)#);
 					writeOutput('</a></h3>');
-					writeOutput(#left(entryResults.entries[ x ].renderContent(),60)#);
+					writeOutput(#left(entryResults.content[ x ].renderContent(),60)#);
 					writeoutput('...');
 					writeOutput('</div>');
 				}
@@ -98,7 +111,7 @@
 	* Get all the categories
 	*/
 	array function getAllCategories() cbIgnore{
-		return categoryService.getAllNames();
+		return variables.categoryService.getAllNames();
 	}
 
 }

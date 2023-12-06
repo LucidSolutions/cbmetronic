@@ -43,7 +43,7 @@
     	#cb.event( "cbui_footer" )#
       <!-- BEGIN COPYRIGHT -->
       <div class="col-md-4 col-sm-4 padding-top-10">
-        2018 &copy; #cb.siteName()#. ALL Rights Reserved.
+        <p>Theme Developed By <a href="https://lucidoutsourcing.com/">Lucid Outsourcing Solutions Pvt. Ltd.</a></p>
       </div>
       <!-- END COPYRIGHT -->
       <!-- BEGIN PAYMENTS -->

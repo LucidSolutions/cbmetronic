@@ -26,7 +26,7 @@
 				#cb.event( "cbui_prePageDisplay" )#
 				<h1>#prc.page.getTitle()#</h1>
 				<div class="text-divider5">
-					#prc.page.getExcerpt()#
+					#prc.page.renderExcerpt()#
 				</div>
 				<div class="content-page">
 					<div class="row">

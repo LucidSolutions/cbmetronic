@@ -51,6 +51,11 @@
 <link href="#cb.themeRoot()#/includes/assets/corporate/css/themes/#lcase(cb.themeSetting('cbBootswatchTheme', 'cb_theme_default_cbBootswatchTheme'))#.css" rel="stylesheet" id="style-color">
 <!-- Theme styles END -->
 
+<cfif len( cb.themeSetting( 'cssStyleOverrides' ) )>
+<style>
+	#cb.themeSetting( 'cssStyleOverrides' )#
+</style>	
+</cfif>
 <!--- ********************************************************************************* --->
 <!--- 					JAVASCRIPT														--->
 <!--- ********************************************************************************* --->

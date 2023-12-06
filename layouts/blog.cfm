@@ -16,7 +16,7 @@
 	#cb.event( "cbui_afterBodyStart" )#
 	
 	<!--- Header --->
-	#cb.quickView( view='_header' )#
+	#cb.quickView( '_header' )#
 
 	<!--- Main Body --->
 	<div class="main">
